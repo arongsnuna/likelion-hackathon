@@ -54,7 +54,7 @@ def festival_search(request):
 
     festival_list = Festival.objects.filter(fe_title__contains=search)
 
-    return render(request, "exhibitionSearch.html", {"exhibition_list": festival_list})
+    return render(request, "search_result_festival.html", {"festival_list": festival_list})
 # Create your views here.
 from django.shortcuts import get_object_or_404
 
