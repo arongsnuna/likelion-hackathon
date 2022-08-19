@@ -120,6 +120,10 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+DJANGO_SUPERUSER_USERNAME = "admin"
+DJANGO_SUPERUSER_PASSWORD = "adminadmin"
+DJANGO_SUPERUSER_EMAIL = "choicco@naver.com"
+
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
@@ -137,6 +141,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
+
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,3 +1,5 @@
+{% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +33,31 @@
             <li class="catogoryMain"><a href="{% url 'home' %}">HOME</a></li>
             <li class="categoryExhibition"><a href="{% url 'exhibition_list' %}">EXHIBITION</a></li>
             <li class="categoryFestival"><a href="{% url 'festival_list' %}">FESTIVAL</a></li>
-            <li class="categoryCategory"><a href="{% url '#' %}">COMMUNITY</a></li>
+            <li class="categoryCategory"><a href="{% url 'home' %}">COMMUNITY</a></li>
         </ul>
     </header>
     <div class="Result">
         <h3>검색하신 결과입니다.</h3>
+                {% for festival in festival_list %}
+            {% if forloop.counter|mod:4 == 1 %}
+                {% if forloop.counter > 2 %}
+                    </div>
+                    {% endif %}
+            {% endif %}
+            {% if forloop.counter|mod:4 == 1 %}
+                <div class="festivalMenu">
+            {% endif %}
+                <div class="googoo">
+                    <a class="detail_link" href = "{% url 'festival_detail' festival.id %}">
+                    <img src="{{ festival.fe_image }}" alt="전시이미지-메뉴1">
+                    <span class="festivalMenu-name1">{{ festival.fe_title }}</span>
+{#                    <span class="festivalMenu-date1">{{ festival.fe_startDate }} ~ {{ festival.fe_endDate }}</span>#}
+{#                    <span class="festivalMenu-location1">{{ festival.fe_place }}</span>#}
+                    </a>
+                </div>
+
+        {% endfor %}
+        </div>
     </div>
 </body>
 </html>

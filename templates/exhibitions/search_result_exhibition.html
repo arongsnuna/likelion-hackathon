@@ -1,3 +1,6 @@
+{% load static %}
+{% load mathfilters %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +34,32 @@
             <li class="catogoryMain"><a href="{% url 'home' %}">HOME</a></li>
             <li class="categoryExhibition"><a href="{% url 'exhibition_list' %}">EXHIBITION</a></li>
             <li class="categoryFestival"><a href="{% url 'festival_list' %}">FESTIVAL</a></li>
-            <li class="categoryCategory"><a href="{% url '#' %}">COMMUNITY</a></li>
+            <li class="categoryCategory"><a href="{% url 'home' %}">COMMUNITY</a></li>
         </ul>
     </header>
     <div class="Result">
         <h3>검색하신 결과입니다.</h3>
+                {% for exhibition in exhibition_list %}
+            {% if forloop.counter|mod:4 == 1 %}
+                {% if forloop.counter > 2 %}
+                    </div>
+                    {% endif %}
+            {% endif %}
+            {% if forloop.counter|mod:4 == 1 %}
+                <div class="exhibitionMenu">
+            {% endif %}
+                <div class="exhibitionWrap">
+                <a class="detail_link" href = "{% url 'exhibition_detail' exhibition.id %}">
+                    <img src="{{ exhibition.ex_image }}" alt="전시이미지-메뉴1">
+                    <span class="exhibitionMenu-name1">{{ exhibition.ex_title }}</span>
+{#                    <span class="exhibitionMenu-date1">{{ exhibition.ex_startDate }} ~ {{ exhibition.ex_endDate }}</span>#}
+{#                    <span class="exhibitionMenu-location1">{{ exhibition.ex_place }}</span>#}
+                    </a>
+                </div>
+
+        {% endfor %}
+        </div>
+    </div>
     </div>
 </body>
 </html>

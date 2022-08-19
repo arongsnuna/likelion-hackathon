@@ -44,7 +44,7 @@ def exhibition_search(request):
 
     exhibition_list = Exhibition.objects.filter(ex_title__contains=search)
 
-    return render(request, "exhibitionSearch.html", {"exhibition_list": exhibition_list})
+    return render(request, "exhibitions/search_result_exhibition.html", {"exhibition_list": exhibition_list})
 
 # Create your views here.
 from django.shortcuts import get_object_or_404
