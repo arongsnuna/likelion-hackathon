@@ -58,37 +58,27 @@
             
             <div class="mainContent">
                 <div class="exhibitionMain">
-                
+                {% for exhibition in exhibitions %}
                     <div class="exhibitionMain-1">
-                        <img src="{{ ex_img }}" alt="전시이미지-메인1">
-                        <span class="exhibitionMain-name1">{{ ex_name }}</span>
-                        <span class="exhibitionMain-date1">{{ ex_startDate}} ~ {{ ex_endDate }}</span>
-                        <span class="exhibitionMain-location1">{{ ex_place }}</span>
+                        <img src="{{ exhibition.ex_image }}" alt="전시이미지-메인1">
+                        <span class="exhibitionMain-name1">{{ exhibition.ex_title }}</span>
+                        <span class="exhibitionMain-date1">{{ exhibition.ex_startDate}} ~ {{ exhibition.ex_endDate }}</span>
+                        <span class="exhibitionMain-location1">{{ exhibition.ex_place }}</span>
                     </div>
-                    <div class="exhibitionMain-2">
-                        <img src="{{ ex_img }}" alt="전시이미지-메인2">
-                        <span class="exhibitionMain-name2">{{ ex_name }}</span>
-                        <span class="exhibitionMain-date2">{{ ex_startDate}} ~ {{ ex_endDate }}</span>
-                        <span class="exhibitionMain-location2">{{ ex_place }}</span>
-                    </div>
+                {% endfor %}
                 </div>
                 
                 <div class="verticalLine"></div>
     
                 <div class="festivalMain">
-                    
+                {% for festival in festivals %}
                     <div class="festivalMain-1">
-                        <img src="{{ fe_img }}" alt="페스티벌이미지-메인1">
-                        <span class="festivalnMain-name1">{{ fe_name }}</span>
-                        <span class="festivalnMain-date1">{{ fe_startDate}} ~ {{ fe_endDate }}</span>
-                        <span class="festivalnMain-location1">{{ fe_place }}</span>
+                        <img src="{{ festival.fe_image }}" alt="전시이미지-메인1">
+                        <span class="festivalMain-name1">{{ festival.fe_title }}</span>
+                        <span class="festivalMain-date1">{{ festival.fe_startDate}} ~ {{ festival.fe_endDate }}</span>
+                        <span class="festivalMain-location1">{{ festival.fe_place }}</span>
                     </div>
-                    <div class="festivalMain-2">
-                        <img src="{{ fe_img }}" alt="페스티벌이미지-메인1">
-                        <span class="festivalnMain-name1">{{ fe_name }}</span>
-                        <span class="festivalnMain-date1">{{ fe_startDate}} ~ {{ fe_endDate }}</span>
-                        <span class="festivalnMain-location1">{{ fe_place }}</span>
-                    </div>
+                {% endfor %}
                 </div>
             </div>
             
