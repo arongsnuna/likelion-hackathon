@@ -42,10 +42,10 @@
             
         </div>
         <div id="exhibitionCategory">
-            <a href="index.html" style="text-decoration: none; color:#21517D;"><span class="catogoryMain">HOME</span></a>
-            <a href="exhibitionList.html" style="text-decoration: none; color:#21517D;"><span class="categoryExhibition">EXHIBITION</span></a>
-            <a href="festivalList.html" style="text-decoration: none; color:#21517D;"><span class="categoryFestival">FESTIVAL</span></a>
-            <span class="categoryCategory">COMMUNITY</span>
+            <a href="{% url 'home' %}" style="text-decoration: none; color:#21517D;"><span class="catogoryMain">HOME</span></a>
+            <a href="{% url 'exhibition_list' %}" style="text-decoration: none; color:#21517D;"><span class="categoryExhibition">EXHIBITION</span></a>
+            <a href="{% url 'festival_list' %}" style="text-decoration: none; color:#21517D;"><span class="categoryFestival">FESTIVAL</span></a>
+            <a href="{% url 'home' %}" style="text-decoration: none; color:#21517D;"></a><span class="categoryCategory">COMMUNITY</span></a>
         </div>
         </div>
     </header>
