@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,7 @@
         </div>
         <div id="mainCategory">
             <a href="index.html" style="text-decoration: none; color:white;"><span class="catogoryMain">HOME</span></a>
-            <a href="exhibitionList.html" style="text-decoration: none; color:white;"><span class="categoryExhibition">EXHIBITION</span></a>
+            <a href="{% url 'exhibition_list' %}" style="text-decoration: none; color:white;"><span class="categoryExhibition">EXHIBITION</span></a>
             <a href="festivalList.html" style="text-decoration: none; color:white;"><span class="categoryFestival">FESTIVAL</span></a>
             <span class="categoryCategory">COMMUNITY</span>
         </div>
