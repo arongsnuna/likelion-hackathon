@@ -7,7 +7,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'js/serach_result.js' %}"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/search_result.css' %}">
     <link rel="stylesheet" href="{% static 'css/festivalList.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
@@ -24,19 +27,17 @@
 </head>
 <body>
     <header>
-        <div id="logoAndSearch">
+        <div class="logoAndSearch">
             <img id="logoImg" src="{% static 'img/WOA_LOGO.png' %}" alt="LOGO">
             
             <div class="dropdown">
-                <select class="form-select-padding-2" id=inputGroupSelect04 aria-label="Example select with button addon">
-                    <option value="1">페스티벌</option>
-                    <option value="1">전시</option>
+                <select id="selectValue">
+                    <option value="festivals">페스티벌</option>
+                    <option value="exhibitions">전시</option>
                 </select>
                 <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+                <img id="search_button" src="{% static 'img/Vector.png' %}" onclick="showResult();">
             </div>
-
-            
         </div>
         <div id="festivalCategory">
             <a href="{% url 'home' %}" style="text-decoration: none; color:rgb(30, 70, 142);"><span class="catogoryMain">HOME</span></a>
