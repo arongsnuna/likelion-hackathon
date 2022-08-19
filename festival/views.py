@@ -47,6 +47,14 @@ def festival_list(request):
     return render(request, "festivals/festivalList.html",
                   {"festival_list": festival_list, "title": title})
 
+
+def festival_search(request):
+    search = request.GET.get("q")
+    # title이 title을 포함하고 있는 전시들을 반환
+
+    festival_list = Festival.objects.filter(fe_title__contains=search)
+
+    return render(request, "exhibitionSearch.html", {"exhibition_list": festival_list})
 # Create your views here.
 from django.shortcuts import get_object_or_404
 

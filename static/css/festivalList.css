@@ -69,12 +69,11 @@
     font-weight: bold;
 }
 
-.festivalMenu-1,.festivalMenu-2,.festivalMenu-3,.festivalMenu-4{
+.googoo {
     width: 240px;
     height: 300px;
     cursor: pointer;
 }
-
 
 /* ------------------달력부트스트랩 CSS------------------------ */
 
