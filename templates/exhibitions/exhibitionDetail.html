@@ -25,12 +25,12 @@
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
             </div>
         </div>
-        <div id="mainCategory">
-            <a href="index.html" style="text-decoration: none; color:white;"><span class="catogoryMain">HOME</span></a>
-            <a href="exhibitionList.html" style="text-decoration: none; color:white;"><span class="categoryExhibition">EXHIBITION</span></a>
-            <a href="festivalList.html" style="text-decoration: none; color:white;"><span class="categoryFestival">FESTIVAL</span></a>
-            <span class="categoryCategory">COMMUNITY</span>
-        </div>
+        <ul class="mainCategory">
+            <li class="catogoryMain"><a href="{% url 'home' %}">HOME</a></li>
+            <li class="categoryExhibition"><a href="{% url 'exhibition_list' %}">EXHIBITION</a></li>
+            <li class="categoryFestival"><a href="{% url 'festival_list' %}">FESTIVAL</a></li>
+            <li class="categoryCategory"><a href="{% url 'home' %}">COMMUNITY</a></li>
+        </ul>
     </header>
     <h4 class="exhibition_name">{{ exhibition_detail.ex_title }}</h4>
     <div class="exhibition_info">
