@@ -24,7 +24,7 @@ header{
 }
 
 /* 메인 메뉴바 */
-.mainCategory {
+#mainCategory {
     background-color: #21517D;
     color: white;
     padding: 0.5%;
