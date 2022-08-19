@@ -17,12 +17,6 @@ def exhibition_list(request):
     else:  #order == "endDate" or order is None or except...
         exhibition_list = Exhibition.objects.all().order_by('ex_endDate')
 
-    # 검색어 필터
-    title = request.GET.get("title")
-    # title이 title을 포함하고 있는 전시들을 반환
-    if title is not None:
-        exhibition_list = exhibition_list.filter(ex_title__contains=title)
-
     date_format = "%Y.%m.%d"
 
     # 시작일 필터
@@ -41,14 +35,16 @@ def exhibition_list(request):
         # lte는 less than or equal, 작거나 같은 조건입니다.
         exhibition_list = exhibition_list.filter(ex_startDate__lte=endDate)
 
-    #페이지네이션, url에 page key를 넘기지 않았을 때는 자동으로 1페이지를 보여줍니다.
-    paginator = Paginator(exhibition_list, 12)
-    page = request.GET.get("page")
-    exhibition_list = paginator.get_page(page)
 
-    return render(request, "exhibitions/exhibitionList.html",
-                  {"exhibition_list": exhibition_list, "page": page})
+    return render(request, "exhibitions/exhibitionList.html", {"exhibition_list": exhibition_list})
 
+def exhibition_search(request):
+    search = request.GET.get("search")
+    # title이 title을 포함하고 있는 전시들을 반환
+
+    exhibition_list = Exhibition.objects.filter(ex_title__contains=search)
+
+    return render(request, "exhibitionSearch.html", {"exhibition_list": exhibition_list})
 
 # Create your views here.
 from django.shortcuts import get_object_or_404

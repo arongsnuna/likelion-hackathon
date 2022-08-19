@@ -14,7 +14,7 @@ $("#calendarInput").on("propertychange change keyup paste input", function() {
     var newStartDate = splitDate[0].trim();
     var newEndDate = splitDate[1].trim();
 
-    var url = "http://127.0.0.1:8000/exhibitions/?page=1"+"&startDate="+newStartDate+"&endDate="+newEndDate;
+    var url = "http://127.0.0.1:8000/exhibitions/?startDate="+newStartDate+"&endDate="+newEndDate;
 
     console.log(url);
 
