@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'festival',
     'exhibition',
     'post',
+    'mainpage',
+    'mathfilters',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

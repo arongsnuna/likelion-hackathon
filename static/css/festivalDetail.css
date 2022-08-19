@@ -25,43 +25,27 @@ header{
 
 /* 메인 메뉴바 */
 .mainCategory {
+    background-color: #21517D;
+    color: white;
     padding: 0.5%;
     text-align: center;
     word-spacing: 6vw;
 
     font-size: 16px;
     font-weight: bold;
+}
 
+
+#category span {
     cursor: pointer;
-    display: flex;
-
-    list-style-type: none;
-    color: black;
-
-    margin-left: 28.5%;
 }
 
-.categoryExhibition{
-    margin-left: 10%;
-}
 
-.categoryFestival{
-    margin-left: 10%;
+#logoAndSearch {
+    padding-bottom: 0.5%;
+    text-align: center;
+    
 }
-
-.categoryCategory{
-    margin-left: 10%;
-}
-
-.mainCategory li{
-    list-style: none;
-}
-
-.mainCategory a {
-    text-decoration: none;
-    color: inherit;
-}
-
 /* 전시 상세페이지 */
 .exhibition_name{
     margin-left: 30%;

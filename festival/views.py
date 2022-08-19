@@ -43,12 +43,9 @@ def festival_list(request):
         festival_list = festival_list.filter(fe_startDate__lte=endDate)
 
     #페이지네이션, url에 page key를 넘기지 않았을 때는 자동으로 1페이지를 보여줍니다.
-    paginator = Paginator(festival_list, 12)
-    page = request.GET.get("page")
-    festival_list = paginator.get_page(page)
 
     return render(request, "festivals/festivalList.html",
-                  {"festival_list": festival_list, "page": page, "order": order, "title": title})
+                  {"festival_list": festival_list, "title": title})
 
 # Create your views here.
 from django.shortcuts import get_object_or_404

@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,13 +26,13 @@
             </div>
         </div>
         <ul class="mainCategory">
-            <li class="catogoryMain"><a href="#">HOME</a></li>
-            <li class="categoryExhibition"><a href="#">EXHIBITION</a></li>
-            <li class="categoryFestival"><a href="#">FESTIVAL</a></li>
-            <li class="categoryCategory"><a href="#">COMMUNITY</a></li>
+            <li class="catogoryMain"><a href="{% url 'home' %}">HOME</a></li>
+            <li class="categoryExhibition"><a href="{% url 'exhibition_list' %}">EXHIBITION</a></li>
+            <li class="categoryFestival"><a href="{% url 'festival_list' %}">FESTIVAL</a></li>
+            <li class="categoryCategory"><a href="{% url 'home' %}">COMMUNITY</a></li>
         </ul>
     </header>
-    <h4 class="exhibition_name">{{ exhibition_detail.ex_title}}</h4>
+    <h4 class="exhibition_name">{{ exhibition_detail.ex_title }}</h4>
     <div class="exhibition_info">
         <div id="left">
             <img src="{{ exhibition_detail.ex_image }}" style="width: 140px;">
