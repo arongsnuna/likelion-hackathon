@@ -9,15 +9,14 @@
 }
 
 .explainBox{
-
     width: 960px;
-    height: 350px;
+    height: 415px;
     margin-top: 10px;
+
+    text-align: center;
 }
 .explainBox img{
-    width: 960px;
-    height: 360px;
-    object-fit: cover;
+    width: 750px;
 }
 
 /* ---------------------------------------------------- */
