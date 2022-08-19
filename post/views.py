@@ -11,7 +11,7 @@ def postcreate(request):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('post_home')
 
     # request method가 get일 경우
     # form 입력 html 띄우기
