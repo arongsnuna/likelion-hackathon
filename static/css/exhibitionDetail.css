@@ -25,21 +25,16 @@ header{
 
 /* 메인 메뉴바 */
 .mainCategory {
+    background-color: #21517D;
+    color: white;
     padding: 0.5%;
     text-align: center;
     word-spacing: 6vw;
 
     font-size: 16px;
     font-weight: bold;
-
-    cursor: pointer;
-    display: flex;
-
-    list-style-type: none;
-    color: black;
-
-    margin-left: 28.5%;
 }
+
 
 .categoryExhibition{
     margin-left: 10%;
