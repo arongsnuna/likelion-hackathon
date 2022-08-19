@@ -32,7 +32,7 @@ header{
     cursor: pointer;
 }
 
-#logoAndSearch {
+.logoAndSearch {
     padding-bottom: 0.5%;
     text-align: center;
 }
@@ -41,5 +41,5 @@ header{
 
 #logoImg {
     width: 100px;
-
+    text-align: center;
 }

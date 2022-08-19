@@ -29,10 +29,10 @@
             </div>
         </div>
         <div id="mainCategory">
-            <a href="main-page.html" style="text-decoration: none; color:#000000;"><span class="catogoryMain">HOME</span></a>
-            <a href="exhibition.html" style="text-decoration: none; color:#000000;"><span class="categoryExhibition">EXHIBITION</span></a>
-            <a href="festival.html" style="text-decoration: none; color:#000000;"><span class="categoryFestival">FESTIVAL</span></a>
-            <span class="categoryCategory" style="text-decoration:underline;  text-decoration-color:#21517D; text-decoration-thickness:3px;">COMMUNITY</span>
+            <a href="{% url 'home' %}" style="text-decoration: none; color:#000000;"><span class="catogoryMain">HOME</span></a>
+            <a href="{% url 'exhibition_list' %}" style="text-decoration: none; color:#000000;"><span class="categoryExhibition">EXHIBITION</span></a>
+            <a href="{% url 'festival_list' %}" style="text-decoration: none; color:#000000;"><span class="categoryFestival">FESTIVAL</span></a>
+            <a href="{% url 'post_home' %}"><span class="categoryCategory" style="text-decoration:underline;  text-decoration-color:#21517D; text-decoration-thickness:3px;">COMMUNITY</span></a>
         </div>
     </header>
 

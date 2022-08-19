@@ -32,10 +32,10 @@
             </div>
         </div>
         <div id="mainCategory">
-            <a href=""style="text-decoration: none; color:#000000;"><span class="catogoryMain">HOME</span></a>
-            <a href="" style="text-decoration: none; color:#000000;"><span class="categoryExhibition">EXHIBITION</span></a>
-            <a href="" style="text-decoration: none; color:#000000;"><span class="categoryFestival">FESTIVAL</span></a>
-            <span class="categoryCategory" style="text-decoration:underline;  text-decoration-color:#21517D; text-decoration-thickness:3px;">COMMUNITY</span>
+            <a href="{% url 'home' %}" style="text-decoration: none; color:#000000;"><span class="catogoryMain">HOME</span></a>
+            <a href="{% url 'exhibition_list' %}" style="text-decoration: none; color:#000000;"><span class="categoryExhibition">EXHIBITION</span></a>
+            <a href="{% url 'festival_list' %}" style="text-decoration: none; color:#000000;"><span class="categoryFestival">FESTIVAL</span></a>
+            <a href="{% url 'post_home' %}"><span class="categoryCategory" style="text-decoration:underline;  text-decoration-color:#21517D; text-decoration-thickness:3px;">COMMUNITY</span></a>
         </div>
     </header>
 
@@ -58,23 +58,33 @@
         <form action="" method="post">
             {% csrf_token %}
             <div class="form-write">
-               <div class="form-group">
-                    <input type="text" class="form-control" id="title" placeholder="제목 입력(4-100)" name="title" maxlength="100" required="required" pattern=".{4,100}">
+                
+                <div class="form-group">
+                    {{form.po_title}}
                 </div>
+                <br/>
                 <div class="form-group2">
-                    <textarea class="form-control" rows="5" id="content"name="content" placeholder="내용 작성" required="required"></textarea>
-                </div>  
-            </div>  
-            <div class="row">
-                <div class="col">
-                    <label for="name"><input type="text" class="form-control" placeholder="닉네임" aria-label="닉네임" required="required">{{po_user_id}}</label>
-                    <label for="password"><input type="text" class="form-control" placeholder="비밀번호" aria-label="비밀번호" required="required">{{po_user_pass}}</label>
+                    {{form.po_contents}}
+                </div>
+                <div style="padding-top:2%;">
+                    {{form.po_category}} 
+                </div>
+                <br/>
+                <div>
+                    {{form.po_user_id}}
+                </div>
+                <br/>
+                <div>
+                    {{form.po_user_pass}}
                 </div>
             </div>
+            
             <div id="button">
-                <button type="button" class="btn btn-default" id="back-btn" style="background-color: #696969; color:white; margin-right:2%;">뒤로가기</button>
-                <input type="submit" class="btn btn-default2" style="color:white; background-color: #21517D;">업로드</input>
+                <input type="button" value="뒤로가기" class="btn btn-default" id="back-btn" style="background-color: #696969; color:white; margin-right:2%;">
+                <input type="submit" value ="업로드" class="btn btn-default2" style="color:white; background-color: #21517D;">
             </div> 
+
+            
         </form>      
     </div>
 
@@ -82,10 +92,10 @@
     <div id="modal" class="modal-overlay" style="display:none;">
         <div class="modal-window">
             <div class="content">
-                <p>작성글을 삭제하시겠습니까?</p>                 
+                <p>작성 중인 글을 삭제하시겠습니까?</p>                 
             </div>
             <div class="modal-btn">
-                <button type="button" class="btn1">예</button>
+                <button type="button" class="btn1" onclick=location.href='{% url "home" %}'>예</button>
                 <button type="button" class="btn2">아니요</button>
             </div>
             

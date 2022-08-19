@@ -4,17 +4,6 @@ header{
     width: 100%; */
     margin-top: 1%; 
 } 
-
-/* 검색바 */
-.logoAndSearch {
-    padding-bottom: 0.5%;
-    text-align: center;
-}
-
-#logoImg {
-    width: 100px;
-}
-
 .dropdown {
     display: inline-flex;
     /* margin-left: 5%; */
@@ -23,41 +12,40 @@ header{
     height: 40px;
 }
 
-/* 메인 메뉴바 */
-.mainCategory {
+
+#mainCategory {
+    color:#000000;
     padding: 0.5%;
     text-align: center;
     word-spacing: 6vw;
-
     font-size: 16px;
     font-weight: bold;
-
-    cursor: pointer;
-    display: flex;
-
-    list-style-type: none;
-    color: black;
-
-    margin-left: 28.5%;
 }
-
-.categoryExhibition{
-    margin-left: 10%;
-}
-
-.categoryFestival{
-    margin-left: 10%;
-}
-
 .categoryCategory{
-    margin-left: 10%;
+    padding-bottom: 7px;
+    border-bottom: 5px solid #21517D;
 }
 
-.mainCategory li{
-    list-style: none;
+
+
+#category span {
+    cursor: pointer;
 }
 
-.mainCategory a {
-    text-decoration: none;
-    color: inherit;
+
+#logoAndSearch {
+    padding-bottom: 0.5%;
+    text-align: center;
+}
+
+#searchBarInput {
+    width: 35%;
+    height: 4vh;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#logoImg {
+    width: 100px;
 }
