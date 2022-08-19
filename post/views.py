@@ -30,7 +30,11 @@ def home(request):
 #### 자유게시판
 def freeposts(request):
     posts = Post.objects.get(po_category = '자유게시판')
-    return render(request, 'post/freePostList.html', {'posts':posts})
+    return render(request, 'post/freeposts/freePostList.html', {'posts':posts})
+
+def freePostDetail(request, post_id):
+    post_detail = get_object_or_404(Post, pk=post_id)
+    return render(request, 'post/freeposts/freePostDetail.html', {'freepost_detail':freepost_detail})
 
 #### 후기게시판
 def reviewposts(request):
