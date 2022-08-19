@@ -39,7 +39,7 @@ def exhibition_list(request):
     return render(request, "exhibitions/exhibitionList.html", {"exhibition_list": exhibition_list})
 
 def exhibition_search(request):
-    search = request.GET.get("search")
+    search = request.GET.get("q")
     # title이 title을 포함하고 있는 전시들을 반환
 
     exhibition_list = Exhibition.objects.filter(ex_title__contains=search)

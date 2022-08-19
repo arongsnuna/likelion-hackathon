@@ -1,5 +1,6 @@
 <!-- festival.html과 변수명 제외 동일합니다 -->
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +60,7 @@
                         <div class="calendarInputGruop">
                           <div class="input-group input-daterange">
                             
-                            <input id="calendarInput" type="text" name="daterange" value="" readonly />
+                            <input id="calendarInput" type="text" name="daterange" value="2022.01.01 - 2022.08.19" readonly />
                           </div>
                         </div>
                       </div>
@@ -71,115 +72,34 @@
         </div>
 
 
+        {% for festival in festival_list %}
+            {% if forloop.counter|mod:4 == 1 %}
+                {% if forloop.counter > 2 %}
+                    </div>
+                    {% endif %}
+            {% endif %}
+            {% if forloop.counter|mod:4 == 1 %}
+                <div class="festivalMenu">
+            {% endif %}
+                <div class="googoo">
+                    <a class="detail_link" href = "{% url 'festival_detail' festival.id %}">
+                    <img src="{{ festival.fe_image }}" alt="전시이미지-메뉴1">
+                    <span class="festivalMenu-name1">{{ festival.fe_title }}</span>
+{#                    <span class="festivalMenu-date1">{{ festival.fe_startDate }} ~ {{ festival.fe_endDate }}</span>#}
+{#                    <span class="festivalMenu-location1">{{ festival.fe_place }}</span>#}
+                    </a>
+                </div>
 
-        <div class="festivalMenu">
-                
-            <div class="festivalMenu-1">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴1">
-                <span class="festivalMenu-name1">{{ fe_name }}</span>
-                <span class="festivalMenu-date1">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location1">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-2">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴2">
-                <span class="festivalMenu-name2">{{ fe_name }}</span>
-                <span class="festivalMenu-date2">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location2">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-3">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴3">
-                <span class="festivalMenu-name3">{{ fe_name }}</span>
-                <span class="festivalMenu-date3">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location3">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-4">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴4">
-                <span class="festivalMenu-name4">{{ fe_name }}</span>
-                <span class="festivalMenu-date4">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalManu-location4">{{ fe_place }}</span>
-            </div>
+        {% endfor %}
         </div>
-
-        <div class="festivalMenu">
-                
-            <div class="festivalMenu-1">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴1">
-                <span class="festivalMenu-name1">{{ fe_name }}</span>
-                <span class="festivalMenu-date1">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location1">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-2">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴2">
-                <span class="festivalMenu-name2">{{ fe_name }}</span>
-                <span class="festivalMenu-date2">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location2">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-3">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴3">
-                <span class="festivalMenu-name3">{{ fe_name }}</span>
-                <span class="festivalMenu-date3">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location3">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-4">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴4">
-                <span class="festivalMenu-name4">{{ fe_name }}</span>
-                <span class="festivalMenu-date4">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalManu-location4">{{ fe_place }}</span>
-            </div>
-        </div>
-
-        <div class="festivalMenu" style="border: none;">
-                
-            <div class="festivalMenu-1">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴1">
-                <span class="festivalMenu-name1">{{ fe_name }}</span>
-                <span class="festivalMenu-date1">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location1">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-2">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴2">
-                <span class="festivalMenu-name2">{{ fe_name }}</span>
-                <span class="festivalMenu-date2">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location2">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-3">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴3">
-                <span class="festivalMenu-name3">{{ fe_name }}</span>
-                <span class="festivalMenu-date3">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalMenu-location3">{{ fe_place }}</span>
-            </div>
-            <div class="festivalMenu-4">
-                <img src="{{ fe_img }}" alt="공연이미지-메뉴4">
-                <span class="festivalMenu-name4">{{ fe_name }}</span>
-                <span class="festivalMenu-date4">{{ fe_startDate }} ~ {{ fe_endDate }}</span>
-                <span class="festivalManu-location4">{{ fe_place }}</span>
-            </div>
-        </div>
-
         
-        
-
-    </div>
-
-    <div class="page-wrap">
-        <ul class="page-nation">
-            <li onclick="movePage(1)">1</li>
-            <li onclick="movePage(2)">2</li>
-            <li onclick="movePage(3)">3</li>
-            <li onclick="movePage(4)">4</li>
-            <li onclick="movePage(5)">5</li>
-            <li onclick="movePage(6)">6</li>
-            <li onclick="movePage(7)">7</li>
-            <li onclick="movePage(8)">8</li>
-        </ul>
-    </div>
 
     <footer>
         <div>by.멋쟁이 사자처럼 상명대학교 아기사자들</div>
     </footer>
 
     <script src="{% static 'js/calendar.js' %}"></script>
-    <script src="{% static 'js/festivarArray.js' %}"></script>
+    <script src="{% static 'js/festivalArray.js' %}"></script>
     <script src="{% static 'js/urlChange.js' %}"></script>
 </body>
 </html>
